@@ -33,27 +33,45 @@ nav
     display: flex
     flex-direction: column
 
+.hero-wrap
+    padding-top: 2rem
+
+.hero-content-wrap
+    display: flex
+    flex-direction: column-reverse
+
 .hero-content
+    text-align: center
     h1 
-        font-size: 3rem
+        font-size: 2.25rem
+        line-height: 110%
+        margin-bottom: 0.5rem
 
     p 
         font-size: 1rem
         margin:
             bottom: 1.5rem
 
+.hero-img
+    margin-right: -50%
+
 .hero-img img
     max-width: 100%
+    padding: 1.5rem 0
 
 .shorten-form
-    padding: 2rem        
+    padding: 1.5rem        
     background-color: $darkViolet
     background-image: url(images/bg-shorten-desktop.svg)
     background-size: cover
     border-radius: 7px
     display: flex   
+    flex-wrap: wrap
     justify-content: space-between 
-    transform: translateY(50%)    
+    transform: translateY(-50%)
+    margin:
+        bottom: -3rem    
+        top: 7rem
 
     input
         border-radius: 7px
@@ -62,13 +80,47 @@ nav
         font-size: 0.75rem 
 
         &[type=url]
-            width: 86.5%
-            padding-left: 1.5rem
+            width: 100%
+            height: 2rem
+            padding-left: 1.5rem             
+                                               
 
-        &[type=submit]
-            width: 12%
-            color: white
-            background-color: $cyan
+    .submit
+        width: 100%
+        margin-top: 1rem
+        color: white
+        background-color: $cyan
+        cursor: pointer
+        border-style: none
+        border-radius: 7px
+        font-size: 0.75rem
+        height: 2rem 
+        padding: 0.5rem
+
+        &:hover
+            background-color: lighten($cyan, 20%)
+    
+    .url-wrap
+        width: 100%
+        position: relative
+        display: flex
+        flex-direction: column
+
+    .alert-text
+        position: absolute
+        bottom: -1.6rem
+        font-size: 0.5rem
+        color: $red
+        font-style: italic
+        display: none
+        padding: 0.25rem
+        margin-bottom: 0.5rem
+
+
+    .url-border
+        border: $red solid 3px
+
+
 
 .content
     background-color: #f0f1f6
@@ -80,7 +132,8 @@ nav
 
 .content-head
     margin: 0 auto
-    width: 50%
+        top: 7rem
+    width: 90%
     display: flex
     flex-direction: column
     align-items: center
@@ -88,12 +141,61 @@ nav
 
     h3
         font-size: 1.75rem
+        line-height: 2rem
+        margin-bottom: 0.75rem
 
 .boost
     background-color: $darkViolet
+    background-image: url(images/bg-boost-mobile.svg)
+    @media screen and ( min-width: 768px )
+        background-image: url(images/bg-boost-desktop.svg)
+        
+
+.boost-wrap
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 2rem
+    h2
+        color: white
+        text-align: center
+        line-height: 120%
+        padding-bottom: 1rem
+        font-size: 1.5rem
 
 footer 
     background-color: $darkerViolet
+
+.footer-wrap
+    padding: 3rem
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-align: center
+
+    h6 
+        color: white
+        cursor: auto
+
+    li
+        color: $gray
+        line-height: 200%
+        cursor: pointer
+
+        &:hover
+            color: $cyan
+
+    .social
+        display: flex
+        width: 60%
+        justify-content: space-between
+        fill: white
+
+        & li:hover
+            fill: $cyan
+
 
 @media screen and ( min-width: 768px  )
     nav
@@ -108,7 +210,6 @@ footer
 
     .hero-wrap
         width: 100%
-        height: 80vh
 
     .hero-img
         overflow-x: hidden
@@ -118,12 +219,61 @@ footer
         height: 100%
         width: 100%
         display: flex
+        flex-direction: row
         justify-content: space-between
         align-items: center
 
     .hero-content
         margin-right: 10%
+        text-align: left
+
+        h1
+            font-size: 3rem
 
     .content-wrap
-        height: 80vh
+        padding-bottom: 5rem
+
+    .content-head
+        width: 50%
+
+    .shorten-form
+        margin-bottom: -1.5rem
+        flex-wrap: nowrap
+
+        .url-wrap
+            width: 80%
+
+        input
+            &[type=url]
+                max-width: 100%
+                margin: 0
+
+        .submit
+            margin-top: 0
+            width: 17%
+
+    .card-wrap
+        display: flex
+
+    .footer-wrap
+        flex-direction: row
+        justify-content: space-between
+        align-items: flex-start
+        text-align: left
+
+        li, h6 
+            font-size: 0.75rem
+
+        .footer-links 
+            margin: 0
+                top: -1rem
+
+        .social
+            width: auto
+            margin: 0
+            li
+                margin: 0 0.5rem
+            svg 
+                transform: scale(0.8)
+    
 
